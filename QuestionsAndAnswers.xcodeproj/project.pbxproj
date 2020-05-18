@@ -13,6 +13,7 @@
 		B21EF3E524723BD800973CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21EF3E424723BD800973CBD /* Assets.xcassets */; };
 		B21EF3E824723BD800973CBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21EF3E724723BD800973CBD /* Preview Assets.xcassets */; };
 		B21EF3EB24723BD800973CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21EF3E924723BD800973CBD /* LaunchScreen.storyboard */; };
+		B21EF3F324723C4100973CBD /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21EF3F224723C4100973CBD /* Questions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B21EF3E724723BD800973CBD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B21EF3EA24723BD800973CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B21EF3EC24723BD800973CBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B21EF3F224723C4100973CBD /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B21EF3E924723BD800973CBD /* LaunchScreen.storyboard */,
 				B21EF3EC24723BD800973CBD /* Info.plist */,
 				B21EF3E624723BD800973CBD /* Preview Content */,
+				B21EF3F224723C4100973CBD /* Questions.swift */,
 			);
 			path = QuestionsAndAnswers;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B21EF3DF24723BD700973CBD /* AppDelegate.swift in Sources */,
+				B21EF3F324723C4100973CBD /* Questions.swift in Sources */,
 				B21EF3E124723BD700973CBD /* SceneDelegate.swift in Sources */,
 				B21EF3E324723BD700973CBD /* ContentView.swift in Sources */,
 			);
