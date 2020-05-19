@@ -59,7 +59,7 @@ struct ContentView: View {
                                         .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
                                         .foregroundColor(.black)
                                 } else {
-                                    Text(self.gameQuestions[0].answerThree)
+                                    Text(self.gameQuestions[0].answerFour)
                                         .frame(width: 100, height: 100)
                                         .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
                                         .foregroundColor(.black)
