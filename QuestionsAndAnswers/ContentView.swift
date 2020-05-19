@@ -51,9 +51,9 @@ struct ContentView: View {
                     HStack(spacing: 20) {
                         ForEach(0 ..< 2) { number in
                             Button(action: {
-                                self.answerTapped(number + 3)
+                                self.answerTapped(number + 2)
                             }) {
-                                if number + 3 == 3 {
+                                if number + 2 == 2 {
                                     Text(self.gameQuestions[0].answerThree)
                                         .frame(width: 100, height: 100)
                                         .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
