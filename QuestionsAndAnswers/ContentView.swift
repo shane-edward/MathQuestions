@@ -10,13 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var gameQuestions = questions.shuffled()
-    
-//    @State private var question = gameQuestions[0].question
-//    @State private var answerOne = gameQuestions[0].answerOne
-//    @State private var answerTwo = gameQuestions[0].answerTwo
-//    @State private var answerThree = gameQuestions[0].answerThree
-//    @State private var answerFour = gameQuestions[0].answerFour
-//    @State private var correctIndex = gameQuestions[0].correctAnswerIndex
 
     @State private var resultShowing = false
     @State private var resultMessage = ""
