@@ -9,45 +9,97 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var gameQuestions = questions.shuffled()
+    
+//    @State private var question = gameQuestions[0].question
+//    @State private var answerOne = gameQuestions[0].answerOne
+//    @State private var answerTwo = gameQuestions[0].answerTwo
+//    @State private var answerThree = gameQuestions[0].answerThree
+//    @State private var answerFour = gameQuestions[0].answerFour
+//    @State private var correctIndex = gameQuestions[0].correctAnswerIndex
+
+    @State private var resultShowing = false
+    @State private var resultMessage = ""
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text("Math is your friend")
+                    .foregroundColor(.white)
+                    .font(.title)
                 Spacer()
-                Text("What is 2 + 2")
+                Text(gameQuestions[0].question)
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .fontWeight(.bold)
                 Spacer()
                 VStack(spacing: 20) {
                     HStack(spacing: 20) {
                         ForEach(0 ..< 2) { number in
                             Button(action: {
-                                // flag was tapped
+                                self.answerTapped(number)
                             }) {
-                                Text("4")
-                                    .frame(width: 100, height: 100)
-                                    .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
-                                    .foregroundColor(.black)
+                                if number == 0 {
+                                    Text(self.gameQuestions[0].answerOne)
+                                        .frame(width: 100, height: 100)
+                                        .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
+                                        .foregroundColor(.black)
+                                } else {
+                                    Text(self.gameQuestions[0].answerTwo)
+                                        .frame(width: 100, height: 100)
+                                        .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
+                                        .foregroundColor(.black)
+                                }
                             }
                         }
                     }
                     HStack(spacing: 20) {
                         ForEach(0 ..< 2) { number in
                             Button(action: {
-                                // flag was tapped
+                                self.answerTapped(number + 3)
                             }) {
-                                Text("4")
-                                    .frame(width: 100, height: 100)
-                                    .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
-                                    .foregroundColor(.black)
+                                if number + 3 == 3 {
+                                    Text(self.gameQuestions[0].answerThree)
+                                        .frame(width: 100, height: 100)
+                                        .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
+                                        .foregroundColor(.black)
+                                } else {
+                                    Text(self.gameQuestions[0].answerThree)
+                                        .frame(width: 100, height: 100)
+                                        .background(LinearGradient(gradient: Gradient(colors: [.white, .gray]), startPoint: .top, endPoint: .bottom))
+                                        .foregroundColor(.black)
+                                }
                             }
                         }
                     }
+//
                 }
                 Spacer()
             }
         }
+        .alert(isPresented: $resultShowing) {
+            Alert(title: Text(resultMessage), message: Text("Continue to the next question"), dismissButton: .default(Text("Continue")) {
+                self.askQuestion()
+            })
+        }
     }
+    
+    func answerTapped(_ number: Int) {
+        if number == gameQuestions[0].correctAnswerIndex {
+            resultMessage = "Correct!"
+        } else {
+            resultMessage = "Incorrect, try again!"
+        }
+        
+        resultShowing = true
+    }
+    
+    func askQuestion() {
+        gameQuestions.shuffle()
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
